@@ -7805,11 +7805,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\ServiceBookingManagement\\AuthorizationMicroservice\\AuthorizationMicroservice.csproj",
+      "projectUniqueName": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\CTS-Project\\AuthorizationMicroservice\\AuthorizationMicroservice.csproj",
       "projectName": "AuthorizationMicroservice",
-      "projectPath": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\ServiceBookingManagement\\AuthorizationMicroservice\\AuthorizationMicroservice.csproj",
+      "projectPath": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\CTS-Project\\AuthorizationMicroservice\\AuthorizationMicroservice.csproj",
       "packagesPath": "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\ServiceBookingManagement\\AuthorizationMicroservice\\obj\\",
+      "outputPath": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\CTS-Project\\AuthorizationMicroservice\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ayush Raj Vaish\\AppData\\Roaming\\NuGet\\NuGet.Config",

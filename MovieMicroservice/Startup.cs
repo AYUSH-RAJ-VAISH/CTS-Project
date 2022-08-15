@@ -35,7 +35,7 @@ namespace MovieMicroservice
                (options => options.UseSqlServer(Configuration.GetConnectionString("Database")));
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1.0", new OpenApiInfo { Title = "Movie MicroService", Version = "1.0" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MovieMicroService", Version = "v1" });
             });
         }
 
@@ -45,6 +45,8 @@ namespace MovieMicroservice
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MovieMicroservice v1"));
             }
 
             app.UseHttpsRedirection();

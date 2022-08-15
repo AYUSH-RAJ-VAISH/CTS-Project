@@ -6324,11 +6324,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\MovieBookingManagementProject\\MovieBookingMicroservice\\MovieBookingMicroservice.csproj",
+      "projectUniqueName": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\CTS-Project\\MovieBookingMicroservice\\MovieBookingMicroservice.csproj",
       "projectName": "MovieBookingMicroservice",
-      "projectPath": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\MovieBookingManagementProject\\MovieBookingMicroservice\\MovieBookingMicroservice.csproj",
+      "projectPath": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\CTS-Project\\MovieBookingMicroservice\\MovieBookingMicroservice.csproj",
       "packagesPath": "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\MovieBookingManagementProject\\MovieBookingMicroservice\\obj\\",
+      "outputPath": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\CTS-Project\\MovieBookingMicroservice\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ayush Raj Vaish\\AppData\\Roaming\\NuGet\\NuGet.Config",

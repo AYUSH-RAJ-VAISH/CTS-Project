@@ -35,7 +35,7 @@ namespace MovieBookingMicroservice
                (options => options.UseSqlServer(Configuration.GetConnectionString("Database")));
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1.0", new OpenApiInfo { Title = "Booking MicroService", Version = "1.0" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookingMicroService", Version = "v1" });
             });
         }
 
@@ -45,6 +45,8 @@ namespace MovieBookingMicroservice
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookingMicroservice v1"));
             }
 
             app.UseHttpsRedirection();
