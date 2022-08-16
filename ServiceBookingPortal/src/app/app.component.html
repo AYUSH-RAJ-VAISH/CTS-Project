@@ -28,17 +28,7 @@
             <li class="scroll-to-section"><a routerLink="/" class="active">Home</a></li>
             <li *ngIf="isAdminUser()" class="scroll-to-section"><a routerLink="/users">Users</a></li>
             <li *ngIf="isLoggedIn()" class="scroll-to-section"><a routerLink="/movie">Movies</a></li>
-            <li *ngIf="isLoggedIn()">
-              <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Services
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" routerLink="/request">Request</a></li>
-                <li><a class="dropdown-item" routerLink="/report">Report</a></li>
-              </ul>
-            </li>
-
-
+            <li *ngIf="isLoggedIn()" class="scroll-to-section"><a routerLink="/booking">Booking</a></li>
             <li class="scroll-to-section"><a routerLink="aboutus">AboutUs</a></li>
             <li *ngIf="!isLoggedIn()">
               <div class="gradient-button"><a id="modal_trigger" routerLink="/auth/login"><i class="fa fa-sign-in-alt"></i> Sign In

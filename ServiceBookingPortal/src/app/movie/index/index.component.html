@@ -31,7 +31,7 @@
                     <td>{{ movie.type }}</td>
                     <!--<td>{{ product.createdDate | date: "dd/MM/yyyy" }}</td>-->
                     <td>
-                        <a href="#" routerLink="/movie/edit/{{movie.id}}" class="edit"><span>Edit</span></a><br>
+                          <a href="#" routerLink="/movie/edit/{{movie.id}}" class="edit"><span>Edit</span></a><br>
                         <a href="#" routerLink="/movie/details/{{movie.id}}" class="details"><span>Details</span></a><br>
                         <button type="button" (click)="deleteMovie(movie.id)" class="btn btn-danger">Delete</button>
                         <!--<a href="#deleteEmployeeModal" class="delete"><i class="bi bi-trash"></i><span>Delete</span></a>-->

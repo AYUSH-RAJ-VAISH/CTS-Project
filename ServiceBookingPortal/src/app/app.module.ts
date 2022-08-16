@@ -10,11 +10,12 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { HomeComponent } from './home/home.component';
 import { MovieModule } from './movie/movie.module';
 import { UsersModule } from './users/users.module';
-import { BookingModule } from './booking/booking.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { BookingModule } from './booking/booking.module';
+
 @NgModule({
   declarations: [
     AppComponent,

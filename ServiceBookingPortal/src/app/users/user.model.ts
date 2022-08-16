@@ -32,3 +32,17 @@ export interface Response {
     message: string;
     status: boolean;
 }
+
+export interface Movie {
+    id:number;
+    name:string;
+    price:number;
+    description:string;
+    type:string;
+}
+
+export interface MovieResponse {
+    message: string;
+    payload: Movie;
+    status: boolean;
+}

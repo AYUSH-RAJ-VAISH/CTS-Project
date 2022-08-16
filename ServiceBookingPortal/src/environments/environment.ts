@@ -7,8 +7,7 @@ export const environment = {
   ConnectedServices: {
     Authorization: "https://localhost:44351/",
     Movie: "https://localhost:44344/",
-    Product: "https://localhost:44444/",
-    ServiceBooking: "https://servicebookingmicroservice20220713184004.azurewebsites.net/",
+    Booking: "https://localhost:44390/",
     User: "https://localhost:44366/"
   }
 };

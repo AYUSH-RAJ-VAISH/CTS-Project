@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../movie.service';
-import { Movie } from '../movie';
+import { BookingService } from '../booking.service';
+import { Booking } from '../booking';
 import { ResponseObject } from 'src/app/response';
 import { ToastrService } from 'ngx-toastr';
 
@@ -12,21 +12,21 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class IndexComponent implements OnInit {
 
-  movies: Movie[];
+  bookings: Booking[];
   authService: any;
 
-  constructor(public movieService: MovieService, private toastr: ToastrService) { }
+  constructor(public bookingService: BookingService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.movieService.getAll().subscribe((data: ResponseObject)=>{
-      this.movies = data.payload;
-      console.log(this.movies);
+    this.bookingService.getAll().subscribe((data: ResponseObject)=>{
+      this.bookings = data.payload;
+      console.log(this.bookings);
     })
   }
 
-  deleteMovie(id:number){
-    this.movieService.delete(id).subscribe(res => {
-         this.movies = this.movies.filter(item => item.id !== id);
+  deleteBooking(id:number){
+    this.bookingService.delete(id).subscribe(res => {
+         this.bookings = this.bookings.filter(item => item.id !== id);
          this.toastr.success('Movie deleted successfully!');
     })
   }

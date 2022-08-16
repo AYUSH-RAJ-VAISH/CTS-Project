@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { User, UserListResponse } from '../user.model';
+import { Movie, MovieResponse, User, UserListResponse } from '../user.model';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -11,13 +11,18 @@ import { ToastrService } from 'ngx-toastr';
 export class IndexComponent implements OnInit {
 
   users: User[];
+  movie:Movie
+  name:string
 
   constructor(public userService: UserService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.userService.getAll().subscribe((data: UserListResponse)=>{
-      this.users = data.payload;
-    })
+      this.users = data.payload;})
+
+      this.userService.getMovie(2).subscribe((data:MovieResponse)=>{
+        this.movie=data.payload;
+      })
   }
 
   deletePost(id:number){

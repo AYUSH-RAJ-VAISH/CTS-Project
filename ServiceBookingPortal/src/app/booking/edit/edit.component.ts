@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
+import { BookingService } from '../booking.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../product';
+import { Booking } from '../booking';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { ResponseObject } from 'src/app/response';
 import { ToastrService } from 'ngx-toastr';
@@ -14,29 +14,28 @@ import { ToastrService } from 'ngx-toastr';
 export class EditComponent implements OnInit {
 
   id: number;
-  product: Product;
+  booking: Booking;
   form: FormGroup;
 
   constructor(
-    public productService: ProductService,
+    public bookingService: BookingService,
     private route: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['productId'];
-    this.productService.find(this.id).subscribe((data: ResponseObject)=>{
-      this.product = data.payload;
+    this.id = this.route.snapshot.params['bookingId'];
+    this.bookingService.find(this.id).subscribe((data: ResponseObject)=>{
+      this.booking = data.payload;
     });
 
     this.form = new FormGroup({
       id: new FormControl('', [Validators.required]),
-      name: new FormControl('', [Validators.required]),
-      make: new FormControl('', Validators.required),
-      model: new FormControl('', Validators.required),
-      cost: new FormControl('', Validators.required),
-      createdDate: new FormControl('', Validators.required),
+      movieId: new FormControl('', [Validators.required]),
+      userId: new FormControl('', Validators.required),
+      noOfSeats: new FormControl('', Validators.required),
+      totalCost: new FormControl('', Validators.required)
     });
   }
 
@@ -46,9 +45,9 @@ export class EditComponent implements OnInit {
 
   submit(){
     console.log(this.form.value);
-    this.productService.update(this.id, this.form.value).subscribe(res => {
-      this.router.navigateByUrl('product/index');
-      this.toastr.success('Product updated successfully!');
+    this.bookingService.update(this.id, this.form.value).subscribe(res => {
+      this.router.navigateByUrl('booking/index');
+      this.toastr.success('Booking updated successfully!');
     })
   }
 

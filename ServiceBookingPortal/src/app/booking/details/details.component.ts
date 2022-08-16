@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
+import { BookingService } from '../booking.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../product';
+import { Booking } from '../booking';
 import { ResponseObject } from 'src/app/response';
 
 @Component({
@@ -12,18 +12,18 @@ import { ResponseObject } from 'src/app/response';
 export class DetailsComponent implements OnInit {
 
   id: number;
-  product: Product;
+  booking: Booking;
 
   constructor(
-    public productService: ProductService,
+    public bookingService: BookingService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['productId'];
-    this.productService.find(this.id).subscribe((data: ResponseObject)=>{
-      this.product = data.payload;
+    this.id = this.route.snapshot.params['bookingId'];
+    this.bookingService.find(this.id).subscribe((data: ResponseObject)=>{
+      this.booking = data.payload;
     });
   }
 

@@ -35,7 +35,7 @@
         <div class="form-group">
             <label for="price">Price</label>
             <input
-                formControlName="make"
+                formControlName="price"
                 id="price"
                 type="number"
                 [(ngModel)]="movie.price"
@@ -74,7 +74,7 @@
         </div>
         
         <div class="modal-footer">
-        <a href="#" routerLink="/product/index" class="btn btn-primary">Back</a>
+        <a href="#" routerLink="/movie/index" class="btn btn-primary">Back</a>
         <input type="submit" class="btn btn-success" [disabled]="!form.valid" value="Update">
         </div>
     </form>

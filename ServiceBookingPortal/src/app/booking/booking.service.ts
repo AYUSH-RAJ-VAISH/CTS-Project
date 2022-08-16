@@ -1,16 +1,19 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { catchError, Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import {  Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+import { Booking, Sample } from './booking';
 import { environment } from 'src/environments/environment';
-import { Sample, SampleReport, UserReport, UserRequest } from './user-request';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookingService {
-  private apiUrl:string = environment.ConnectedServices.ServiceBooking + "api/service/";
- private apiUrl2:string= this.apiUrl+"report/";
+
+  private apiURL = environment.ConnectedServices.Movie;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,41 +23,44 @@ export class BookingService {
 
   constructor(private httpClient: HttpClient, private toastr: ToastrService) { }
 
-  getRequests():Observable<any>
-  {
-    return this.httpClient.get(this.apiUrl)
+  getAll(): Observable<any> {
+
+    return this.httpClient.get(this.apiURL + 'api/bookings/')
+
     .pipe(
       catchError(this.errorHandler)
     )
   }
 
-  deleteRequest(id:number):Observable<any>
-  {
-    return this.httpClient.delete(this.apiUrl + id , this.httpOptions)
+  create(booking:Sample): Observable<any> {
+
+    return this.httpClient.post(this.apiURL + 'api/bookings/', booking, this.httpOptions)
+
     .pipe(
       catchError(this.errorHandler)
     )
   }
 
-  getRquestById(id:number):Observable<any>
-  {
-    return this.httpClient.get(this.apiUrl + id)
+  find(id: number): Observable<any> {
+
+    return this.httpClient.get(this.apiURL + 'api/bookings/' + id)
+
     .pipe(
       catchError(this.errorHandler)
     )
   }
 
-  addRequest(request:Sample):Observable<any>
-  {
-    return this.httpClient.post(this.apiUrl, request, this.httpOptions)
+  update(id: number, booking:Booking): Observable<any> {
+
+    return this.httpClient.put(this.apiURL + 'api/bookings/' + id, booking, this.httpOptions)
+
     .pipe(
       catchError(this.errorHandler)
     )
   }
 
-  updateRequest(id:number, request:UserRequest): Observable<any> {
-
-    return this.httpClient.put(this.apiUrl + id, request, this.httpOptions)
+  delete(id:number){
+    return this.httpClient.delete(this.apiURL + 'api/bookings/' + id, this.httpOptions)
 
     .pipe(
       catchError(this.errorHandler)
@@ -69,50 +75,8 @@ export class BookingService {
     } else {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
+
     this.toastr.error(errorMessage, 'Error');
     return throwError(() => new Error(errorMessage));
  }
-
-
-getReport():Observable<any>
-  {
-    return this.httpClient.get(this.apiUrl2)
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
-
-  deleteReport(id:number):Observable<any>
-  {
-    return this.httpClient.delete(this.apiUrl2 + id , this.httpOptions)
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
-
-  getReportById(id:number):Observable<any>
-  {
-    return this.httpClient.get(this.apiUrl2 + id)
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
-
-  addReport(report:SampleReport):Observable<any>
-  {
-    return this.httpClient.post(this.apiUrl2, report, this.httpOptions)
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
-
-  updateReport(id:number, report:UserReport): Observable<any> {
-
-    return this.httpClient.put(this.apiUrl2 + id, report, this.httpOptions)
-
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
-
 }

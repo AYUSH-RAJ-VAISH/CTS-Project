@@ -1,4 +1,3 @@
-import { Product } from "./product/product";
 
 export interface ResponseObject {
     status:number,

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
+import { BookingService } from '../booking.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-import {Product, Sample} from '../product';
+import {Booking, Sample} from '../booking';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -13,10 +13,10 @@ import { ToastrService } from 'ngx-toastr';
 export class CreateComponent implements OnInit {
 
   form:FormGroup;
-  product:Sample;
+  booking:Sample;
 
   constructor(
-    public productService: ProductService,
+    public bookingService: BookingService,
     private router: Router,
     private route: ActivatedRoute,
     private toastr: ToastrService
@@ -24,11 +24,10 @@ export class CreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      name: new FormControl('', [Validators.required]),
-      make: new FormControl('', Validators.required),
-      model: new FormControl('', Validators.required),
-      cost: new FormControl('', Validators.required),
-      createdDate: new FormControl('', Validators.required)
+      movieId: new FormControl('', [Validators.required]),
+      userId: new FormControl('', Validators.required),
+      noOfSeats: new FormControl('', Validators.required),
+      totalCost: new FormControl('', Validators.required)
     });
   }
 
@@ -37,9 +36,9 @@ export class CreateComponent implements OnInit {
   }
 
   submit(){
-    this.productService.create(this.form.value).subscribe(res => {
-      this.toastr.success('Post created successfully!');
-      this.router.navigate(['product/index']);
+    this.bookingService.create(this.form.value).subscribe(res => {
+      this.toastr.success('Booking created successfully!');
+      this.router.navigate(['booking/index']);
     })
   }
 
