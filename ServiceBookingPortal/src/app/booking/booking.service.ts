@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class BookingService {
 
-  private apiURL = environment.ConnectedServices.Movie;
+  private apiURL = environment.ConnectedServices.Booking;
 
   httpOptions = {
     headers: new HttpHeaders({

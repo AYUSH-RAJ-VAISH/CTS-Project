@@ -37,6 +37,10 @@ namespace MovieBookingMicroservice
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookingMicroService", Version = "v1" });
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AngularPolicy", policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +56,8 @@ namespace MovieBookingMicroservice
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("AngularPolicy");
 
             app.UseAuthorization();
 

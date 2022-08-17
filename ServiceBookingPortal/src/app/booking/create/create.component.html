@@ -36,7 +36,8 @@
                 <input 
                     formControlName="noOfSeats"
                     id="noOfSeats" 
-                    type="number" 
+                    type="number"
+                    [(ngModel)]="booking.noOfSeats" 
                     class="form-control">
                 <div *ngIf="f.noOfSeats.touched && f.noOfSeats.invalid" class="alert alert-danger">
                     <div *ngIf="f.noOfSeats.errors?.required">NoOfSeats is required.</div>
@@ -49,6 +50,7 @@
                     formControlName="totalCost"
                     id="totalCost" 
                     type="number" 
+                    [(ngModel)]="booking.totalCost"
                     class="form-control">
                 <div *ngIf="f.totalCost.touched && f.totalCost.invalid" class="alert alert-danger">
                     <div *ngIf="f.totalCost.errors?.required">TotalCost is required.</div>

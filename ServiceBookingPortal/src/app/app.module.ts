@@ -33,7 +33,7 @@ import { BookingModule } from './booking/booking.module';
     AuthenticationModule,
     MovieModule,
     UsersModule,
-    BookingModule
+    BookingModule,
   ],
   providers: [
     AuthService,
