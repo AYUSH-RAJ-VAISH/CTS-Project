@@ -155,7 +155,7 @@ namespace MovieBookingMicroservice.Tests
             _repository.Setup(x => x.CreateBooking(booking)).ReturnsAsync(booking);
 
             var response = await _controller.PostBooking(booking);
-            Assert.IsInstanceOf<BadRequestResult>(response.Result);
+            Assert.IsInstanceOf<CreatedAtActionResult>(response.Result);
         }
 
         [Test]

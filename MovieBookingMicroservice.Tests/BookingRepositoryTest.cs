@@ -19,10 +19,10 @@ namespace MovieBookingMicroservice.Tests
         {
             return new List<Booking>
             {
-                new Booking() {Id=1,MovieId=1, UserId=1, NoOfSeats=1, TotalCost=250},
-                new Booking() {Id=2,MovieId=2, UserId=1, NoOfSeats=2, TotalCost=560},
-                new Booking() {Id=3,MovieId=3, UserId=2, NoOfSeats=2, TotalCost=700},
-                new Booking() {Id=4,MovieId=4, UserId=2, NoOfSeats=1, TotalCost=250}
+                new Booking() {MovieId=1, UserId=1, NoOfSeats=1, TotalCost=250},
+                new Booking() {MovieId=2, UserId=1, NoOfSeats=2, TotalCost=560},
+                new Booking() {MovieId=3, UserId=2, NoOfSeats=2, TotalCost=700},
+                new Booking() {MovieId=4, UserId=2, NoOfSeats=1, TotalCost=250}
             };
         }
 
@@ -82,15 +82,16 @@ namespace MovieBookingMicroservice.Tests
         [Test]
         public async Task Check_CreateBooking()
         {
-            List<Booking> movies = GetBookings();
-            _context.Bookings.AddRange(movies);
+            int c=_context.Bookings.Count();
+            List<Booking> bookings = GetBookings();
+            _context.Bookings.AddRange(bookings);
             _context.SaveChanges();
             _sut = new BookingRepository(_context);
             Booking p = new Booking() { MovieId = 1, UserId = 1, NoOfSeats = 1, TotalCost = 250 };
 
             await _sut.CreateBooking(p);
 
-            Assert.That(_context.Bookings.Count, Is.EqualTo(5));
+            Assert.That(_context.Bookings.Count, Is.EqualTo(c+5));
 
         }
 
@@ -114,16 +115,17 @@ namespace MovieBookingMicroservice.Tests
         {
             int id = 1;
             List<Booking> bookings = GetBookings();
-            Booking p = bookings.Find(x => x.Id == id);
+            _context.AddRange(bookings);
+            _context.SaveChanges();
+            Booking p = _context.Bookings.Find(id);
             int newNoOfSeats = 2;
             p.NoOfSeats = newNoOfSeats;
-            _context.Bookings.AddRange(bookings);
             _context.SaveChanges();
             _sut = new BookingRepository(_context);
 
-            Booking returnedMovie = await _sut.PutBooking(id, p);
+            Booking returnedBooking = await _sut.PutBooking(id, p);
 
-            Assert.That(p, Is.EqualTo(returnedMovie));
+            Assert.That(p, Is.EqualTo(returnedBooking));
 
 
         }

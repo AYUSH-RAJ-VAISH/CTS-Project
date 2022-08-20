@@ -18,10 +18,10 @@ namespace MovieMicroservice.Tests
         {
             return new List<Movie>
             {
-                new Movie() {Id=1,Name="Movie1", Price=250, Description="Awesome Movie", Type="Bollywood"},
-                new Movie() {Id=2,Name="Movie2", Price=280, Description="Awesome Movie", Type="Bollywood"},
-                new Movie() {Id=3,Name="Movie3", Price=300, Description="Awesome Movie", Type="Hollywood"},
-                new Movie() {Id=4,Name="Movie4", Price=250, Description="Awesome Movie", Type="Hollywood"}
+                new Movie() {Name="Movie1", Price=250, Description="Awesome Movie", Type="Bollywood"},
+                new Movie() {Name="Movie2", Price=280, Description="Awesome Movie", Type="Bollywood"},
+                new Movie() {Name="Movie3", Price=300, Description="Awesome Movie", Type="Hollywood"},
+                new Movie() {Name="Movie4", Price=250, Description="Awesome Movie", Type="Hollywood"}
             };
         }
 
@@ -81,6 +81,7 @@ namespace MovieMicroservice.Tests
         [Test]
         public async Task Check_CreateMovie()
         {
+            int c = _context.Movies.Count();
             List<Movie> movies = GetMovies();
             _context.Movies.AddRange(movies);
             _context.SaveChanges();
@@ -89,7 +90,7 @@ namespace MovieMicroservice.Tests
 
             await _sut.CreateMovie(p);
 
-            Assert.That(_context.Movies.Count, Is.EqualTo(5));
+            Assert.That(_context.Movies.Count, Is.EqualTo(c+5));
 
         }
 
@@ -113,10 +114,11 @@ namespace MovieMicroservice.Tests
         {
             int id = 1;
             List<Movie> movies = GetMovies();
-            Movie p = movies.Find(x => x.Id == id);
+            _context.Movies.AddRange(movies);
+            _context.SaveChanges();
+            Movie p = _context.Movies.Find(id);
             string newName = "Test";
             p.Name = newName;
-            _context.Movies.AddRange(movies);
             _context.SaveChanges();
             _sut = new MovieRepository(_context);
 

@@ -157,7 +157,7 @@ namespace MovieMicroservice.Tests
             _repository.Setup(x => x.CreateMovie(movie)).ReturnsAsync(movie);
 
             var response = await _controller.PostMovie(movie);
-            Assert.IsInstanceOf<BadRequestResult>(response.Result);
+            Assert.IsInstanceOf<CreatedAtActionResult>(response.Result);
         }
 
         [Test]
