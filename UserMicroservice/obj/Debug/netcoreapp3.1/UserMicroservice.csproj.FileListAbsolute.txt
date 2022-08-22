@@ -72,3 +72,4 @@ C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\UserMicroservice\obj\
 C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\UserMicroservice\obj\Debug\netcoreapp3.1\UserMicroservice.dll
 C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\UserMicroservice\obj\Debug\netcoreapp3.1\UserMicroservice.pdb
 C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\UserMicroservice\obj\Debug\netcoreapp3.1\UserMicroservice.genruntimeconfig.cache
+C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\UserMicroservice\bin\Debug\netcoreapp3.1\.filenesting.json
