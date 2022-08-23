@@ -7,13 +7,15 @@ import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BookingComponent } from './booking/booking.component';
 
 @NgModule({
   declarations: [
     IndexComponent,
     DetailsComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    BookingComponent
   ],
   imports: [
     CommonModule,

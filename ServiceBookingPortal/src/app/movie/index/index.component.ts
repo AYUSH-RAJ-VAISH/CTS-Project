@@ -3,6 +3,7 @@ import { MovieService } from '../movie.service';
 import { Movie } from '../movie';
 import { ResponseObject } from 'src/app/response';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/authentication/auth.service';
 
 
 @Component({
@@ -13,9 +14,8 @@ import { ToastrService } from 'ngx-toastr';
 export class IndexComponent implements OnInit {
 
   movies: Movie[];
-  authService: any;
 
-  constructor(public movieService: MovieService, private toastr: ToastrService) { }
+  constructor(public movieService: MovieService, private toastr: ToastrService,private authService: AuthService) { }
 
   ngOnInit(): void {
     this.movieService.getAll().subscribe((data: ResponseObject)=>{

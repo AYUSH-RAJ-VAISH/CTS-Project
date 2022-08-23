@@ -4,13 +4,15 @@ import { IndexComponent } from './index/index.component';
 import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
+import { BookingComponent } from './booking/booking.component';
 
 const routes: Routes = [
   { path: 'movie', redirectTo: 'movie/index', pathMatch: 'full'},
   { path: 'movie/index', component: IndexComponent },
   { path: 'movie/details/:movieId', component: DetailsComponent },
   { path: 'movie/create', component: CreateComponent },
-  { path: 'movie/edit/:movieId', component: EditComponent }
+  { path: 'movie/edit/:movieId', component: EditComponent },
+  { path: 'movie/booking/:movieId', component: BookingComponent }
 ];
 
 @NgModule({

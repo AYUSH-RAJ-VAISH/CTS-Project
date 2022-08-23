@@ -34,7 +34,7 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['userId'];
     console.log(this.id)
-    this.userService.find(this.id).subscribe((data: UserResponse)=>{
+    this.userService.search(this.id).subscribe((data: UserResponse)=>{
       this.user = data.payload;
 
       this.form = new FormGroup({
