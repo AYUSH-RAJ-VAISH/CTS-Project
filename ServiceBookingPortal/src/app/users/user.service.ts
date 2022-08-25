@@ -46,13 +46,13 @@ export class UserService {
     );
   }
 
-  getMovie(id: number): Observable<any>{
-    return this.httpClient.get("https://localhost:44344/api/movies/" + id)
+  // getMovie(id: number): Observable<any>{
+  //   return this.httpClient.get("https://localhost:44344/api/movies/" + id)
 
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }
+  //   .pipe(
+  //     catchError(this.errorHandler)
+  //   )
+  // }
 
   errorHandler(error:any) {
     let errorMessage = '';

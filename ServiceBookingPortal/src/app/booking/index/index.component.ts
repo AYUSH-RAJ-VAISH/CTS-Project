@@ -3,6 +3,7 @@ import { BookingService } from '../booking.service';
 import { Booking } from '../booking';
 import { ResponseObject } from 'src/app/response';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/authentication/auth.service';
 
 
 @Component({
@@ -13,9 +14,9 @@ import { ToastrService } from 'ngx-toastr';
 export class IndexComponent implements OnInit {
 
   bookings: Booking[];
-  authService: any;
+  userId:number;
 
-  constructor(public bookingService: BookingService, private toastr: ToastrService) { }
+  constructor(public bookingService: BookingService,public authService: AuthService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.bookingService.getAll().subscribe((data: ResponseObject)=>{
@@ -33,6 +34,10 @@ export class IndexComponent implements OnInit {
 
   isAdminUser() {
     return this.authService.isAdmin();
+  }
+
+  isUser(){
+    return Number(localStorage.getItem('id'));
   }
 
 }

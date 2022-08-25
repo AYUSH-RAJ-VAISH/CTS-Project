@@ -15,7 +15,7 @@ export class IndexComponent implements OnInit {
 
   movies: Movie[];
 
-  constructor(public movieService: MovieService, private toastr: ToastrService,private authService: AuthService) { }
+  constructor(public movieService: MovieService,public authService: AuthService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.movieService.getAll().subscribe((data: ResponseObject)=>{

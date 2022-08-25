@@ -20,9 +20,9 @@ export class IndexComponent implements OnInit {
     this.userService.getAll().subscribe((data: UserListResponse)=>{
       this.users = data.payload;})
 
-      this.userService.getMovie(2).subscribe((data:MovieResponse)=>{
-        this.movie=data.payload;
-      })
+      // this.userService.getMovie(2).subscribe((data:MovieResponse)=>{
+      //   this.movie=data.payload;
+      // })
   }
 
   deletePost(id:number){
