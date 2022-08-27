@@ -27,7 +27,7 @@ namespace MovieMicroservice.Controllers
 
         // GET: api/Movies
         [HttpGet]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<ResponseObj>> GetMovies()
         {
             try
@@ -46,7 +46,7 @@ namespace MovieMicroservice.Controllers
 
         // GET: api/Movies/5
         [HttpGet("{id}")]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<ResponseObj>> GetMovie(int id)
         {
             try
@@ -71,7 +71,7 @@ namespace MovieMicroservice.Controllers
 
         // PUT: api/Movies/5
         [HttpPut("{id}")]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<ResponseObj>> PutMovie(int id, Movie movie)
         {
             _log4net.Info("PutMovie Method called");
@@ -94,7 +94,7 @@ namespace MovieMicroservice.Controllers
 
         // POST: api/Movies
         [HttpPost]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<ResponseObj>> PostMovie([FromBody] Movie movie)
         {
             try
@@ -121,7 +121,7 @@ namespace MovieMicroservice.Controllers
 
         // DELETE: api/Movies/5
         [HttpDelete("{id}")]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<Movie>> DeleteMovie(int id)
         {
             try

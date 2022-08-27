@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "aLvwuUJa61gYbagZiv/X5/eMfbtaDH84KQbcm67QJvyBIGSz956T60ZANz31u8BAWTEh8lPQP8lZc1lk7TVTOw==",
+  "dgSpecHash": "MEoc6h4HA0URCn5ztEb3kAtYz3hGpgHyU/RgUFteIbRhZfEU7RZuhIaLHfoy+MJT9Uurnqv1IpHISFg+6mzc8w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\CTS-Project\\MovieMicroservice.Tests\\MovieMicroservice.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\log4net\\2.0.13\\log4net.2.0.13.nupkg.sha512",
+    "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.28\\microsoft.aspnetcore.authentication.jwtbearer.3.1.28.nupkg.sha512",
     "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

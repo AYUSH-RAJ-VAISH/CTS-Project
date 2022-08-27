@@ -282,3 +282,4 @@ C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\MovieMicroservice\obj
 C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\MovieMicroservice\obj\Debug\netcoreapp3.1\MovieMicroservice.dll
 C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\MovieMicroservice\obj\Debug\netcoreapp3.1\MovieMicroservice.pdb
 C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\MovieMicroservice\obj\Debug\netcoreapp3.1\MovieMicroservice.genruntimeconfig.cache
+C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\MovieMicroservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

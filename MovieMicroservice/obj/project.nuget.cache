@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "lNQELldq70F2h4FQqwC7Mp7841sVIkFGN617igEqSShCqeNw9WzRSIquX8WkqZaNvxfi3aR+kWu6J25/lLoAlw==",
+  "dgSpecHash": "s56SWIUZSNnKPQXjuu6ROfnszfMV3M1UZdGe+ob7LoxWPNVN3F+wZ7fYHWv8gNoPJ2cVaji2MInxzE+fbQs3/g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ayush Raj Vaish\\Desktop\\Cogni Project\\CTS-Project\\MovieMicroservice\\MovieMicroservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\log4net\\2.0.13\\log4net.2.0.13.nupkg.sha512",
+    "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.28\\microsoft.aspnetcore.authentication.jwtbearer.3.1.28.nupkg.sha512",
     "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Ayush Raj Vaish\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
