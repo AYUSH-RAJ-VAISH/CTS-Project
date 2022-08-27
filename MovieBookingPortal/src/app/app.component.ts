@@ -8,7 +8,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ServiceBookingPortal';
+  title = 'MovieBookingPortal';
 
   constructor(private authService: AuthService, private router: Router) { }
 

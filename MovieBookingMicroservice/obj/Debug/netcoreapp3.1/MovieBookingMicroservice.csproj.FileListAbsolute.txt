@@ -138,3 +138,4 @@ C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\MovieBookingMicroserv
 C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\MovieBookingMicroservice\obj\Debug\netcoreapp3.1\MovieBookingMicroservice.dll
 C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\MovieBookingMicroservice\obj\Debug\netcoreapp3.1\MovieBookingMicroservice.pdb
 C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\MovieBookingMicroservice\obj\Debug\netcoreapp3.1\MovieBookingMicroservice.genruntimeconfig.cache
+C:\Users\Ayush Raj Vaish\Desktop\Cogni Project\CTS-Project\MovieBookingMicroservice\bin\Debug\netcoreapp3.1\log4net.config
