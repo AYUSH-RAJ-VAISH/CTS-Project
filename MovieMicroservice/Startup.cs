@@ -33,6 +33,7 @@ namespace MovieMicroservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddLogging();
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddDbContext<MovieContext>
                (options => options.UseSqlServer(Configuration.GetConnectionString("Database")));

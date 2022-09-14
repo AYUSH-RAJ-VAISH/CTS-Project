@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieBookingMicroservice.Model;
 using MovieBookingMicroservice.Repository;
@@ -23,7 +24,7 @@ namespace MovieBookingMicroservice.Controllers
 
         // GET: api/Bookings
         [HttpGet]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<ResponseObj>> GetBookings()
         {
             try
@@ -42,7 +43,7 @@ namespace MovieBookingMicroservice.Controllers
 
         // GET: api/Bookings/5
         [HttpGet("{id}")]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<ResponseObj>> GetBooking(int id)
         {
             try
@@ -67,7 +68,7 @@ namespace MovieBookingMicroservice.Controllers
 
         // PUT: api/Bookings/5
         [HttpPut("{id}")]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<ResponseObj>> PutBooking(int id, Booking booking)
         {
             _log4net.Info("PutBooking Method called");
@@ -90,7 +91,7 @@ namespace MovieBookingMicroservice.Controllers
 
         // POST: api/Bookings
         [HttpPost]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<ResponseObj>> PostBooking([FromBody] Booking booking)
         {
             try
@@ -117,7 +118,7 @@ namespace MovieBookingMicroservice.Controllers
 
         // DELETE: api/Movies/5
         [HttpDelete("{id}")]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<Booking>> DeleteBooking(int id)
         {
             try
