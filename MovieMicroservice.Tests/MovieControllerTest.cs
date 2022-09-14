@@ -52,8 +52,8 @@ namespace MovieMicroservice.Tests
             Assert.IsInstanceOf<OkObjectResult>(response.Result);
             var result = response.Result as OkObjectResult;
             ResponseObj converted = result.Value as ResponseObj;
-            Assert.IsNotNull(converted.payload);
-            var returedValues = converted.payload as IEnumerable<Movie>;
+            Assert.IsNotNull(converted.Payload);
+            var returedValues = converted.Payload as IEnumerable<Movie>;
             Assert.That(returedValues.Count(), Is.EqualTo(movies.Count));
             Assert.That(movies, Is.EqualTo(returedValues));
         }
@@ -76,8 +76,8 @@ namespace MovieMicroservice.Tests
             Assert.IsInstanceOf<OkObjectResult>(response.Result);
             var result = response.Result as OkObjectResult;
             ResponseObj converted = result.Value as ResponseObj;
-            Assert.IsNotNull(converted.payload);
-            var returedValue = converted.payload as Movie;
+            Assert.IsNotNull(converted.Payload);
+            var returedValue = converted.Payload as Movie;
             Assert.That(p, Is.EqualTo(returedValue));
 
         }
@@ -110,8 +110,8 @@ namespace MovieMicroservice.Tests
             Assert.IsInstanceOf<OkObjectResult>(response.Result);
             var result = response.Result as OkObjectResult;
             ResponseObj converted = result.Value as ResponseObj;
-            Assert.IsNotNull(converted.payload);
-            var returedValue = converted.payload as Movie;
+            Assert.IsNotNull(converted.Payload);
+            var returedValue = converted.Payload as Movie;
             Assert.That(returedValue, Is.EqualTo(movie));
         }
 
@@ -145,8 +145,8 @@ namespace MovieMicroservice.Tests
             Assert.IsInstanceOf<CreatedAtActionResult>(response.Result);
             var result = response.Result as CreatedAtActionResult;
             ResponseObj converted = result.Value as ResponseObj;
-            Assert.IsNotNull(converted.payload);
-            var returedValue = converted.payload as Movie;
+            Assert.IsNotNull(converted.Payload);
+            var returedValue = converted.Payload as Movie;
             Assert.That(returedValue, Is.EqualTo(movieFinal));
         }
         [Test]
@@ -178,7 +178,7 @@ namespace MovieMicroservice.Tests
             Assert.IsInstanceOf<OkObjectResult>(response.Result);
             var result = response.Result as OkObjectResult;
             var responseObj = result.Value as ResponseObj;
-            var returedMovie = responseObj.payload as Movie;
+            var returedMovie = responseObj.Payload as Movie;
             Assert.That(movie.Id, Is.EqualTo(returedMovie.Id));
             Assert.That(returedMovie, Is.EqualTo(movie));
         }

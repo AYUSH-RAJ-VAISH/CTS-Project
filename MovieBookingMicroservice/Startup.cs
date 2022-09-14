@@ -33,6 +33,7 @@ namespace MovieBookingMicroservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddLogging();
             services.AddScoped<IBookingRepository, BookingRepository>();
             services.AddDbContext<BookingContext>
                (options => options.UseSqlServer(Configuration.GetConnectionString("Database")));

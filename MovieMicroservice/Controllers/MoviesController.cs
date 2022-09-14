@@ -34,7 +34,7 @@ namespace MovieMicroservice.Controllers
             {
                 _log4net.Info("GetMovies Method Called");
                 IEnumerable<Movie> movies = await _repository.GetMovies();
-                return Ok(new ResponseObj { status = 200, msg = "All movies", payload = movies });
+                return Ok(new ResponseObj { Status = 200, Msg = "All movies", Payload = movies });
                 //return Ok(products);
             }
             catch
@@ -59,7 +59,7 @@ namespace MovieMicroservice.Controllers
                     return NotFound();
                 }
 
-                return Ok(new ResponseObj { status = 200, msg = "Movie Found", payload = movie });
+                return Ok(new ResponseObj { Status = 200, Msg = "Movie Found", Payload = movie });
                 //return Ok(product);
             }
             catch
@@ -82,7 +82,7 @@ namespace MovieMicroservice.Controllers
             try
             {
                 movie = await _repository.PutMovies(id, movie);
-                return Ok(new ResponseObj { status = 200, msg = "Update Successful", payload = movie });
+                return Ok(new ResponseObj { Status = 200, Msg = "Update Successful", Payload = movie });
                 //return Ok(product);
             }
             catch
@@ -103,7 +103,7 @@ namespace MovieMicroservice.Controllers
                 {
                     _log4net.Info("PostMovie Method Called");
                     Movie movieWithId = await _repository.CreateMovie(movie);
-                    return CreatedAtAction("PostMovie", new ResponseObj { status = 200, msg = "Movie Added", payload = movieWithId });
+                    return CreatedAtAction("PostMovie", new ResponseObj { Status = 200, Msg = "Movie Added", Payload = movieWithId });
                     //return CreatedAtAction("PostProduct", productWithId);
                 }
                 else
@@ -133,7 +133,7 @@ namespace MovieMicroservice.Controllers
                     return NotFound();
                 }
 
-                return Ok(new ResponseObj { status = 200, msg = "Deleted Successfully", payload = movie });
+                return Ok(new ResponseObj { Status = 200, Msg = "Deleted Successfully", Payload = movie });
                 //return Ok(product);
             }
             catch

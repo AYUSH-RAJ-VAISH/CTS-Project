@@ -7,8 +7,8 @@ namespace MovieBookingMicroservice.Model
 {
     public class ResponseObj
     {
-        public int status { get; set; }
-        public string msg { get; set; }
-        public Object payload { get; set; }
+        public int Status { get; set; }
+        public string Msg { get; set; }
+        public Object Payload { get; set; }
     }
 }

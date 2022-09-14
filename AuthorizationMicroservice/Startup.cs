@@ -28,6 +28,7 @@ namespace AuthorizationMicroservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddLogging();
             services.AddSingleton<AuthenticationService, AuthenticationService>();
             services.AddSwaggerGen(c =>
             {

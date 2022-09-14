@@ -31,7 +31,7 @@ namespace MovieBookingMicroservice.Controllers
             {
                 _log4net.Info("GetBookings Method Called");
                 IEnumerable<Booking> bookings = await _repository.GetBookings();
-                return Ok(new ResponseObj { status = 200, msg = "All bookings", payload = bookings });
+                return Ok(new ResponseObj { Status = 200, Msg = "All bookings", Payload = bookings });
                 //return Ok(products);
             }
             catch
@@ -56,7 +56,7 @@ namespace MovieBookingMicroservice.Controllers
                     return NotFound();
                 }
 
-                return Ok(new ResponseObj { status = 200, msg = "Booking Found", payload = booking });
+                return Ok(new ResponseObj { Status = 200, Msg = "Booking Found", Payload = booking });
                 //return Ok(product);
             }
             catch
@@ -79,7 +79,7 @@ namespace MovieBookingMicroservice.Controllers
             try
             {
                 booking = await _repository.PutBooking(id, booking);
-                return Ok(new ResponseObj { status = 200, msg = "Update Successful", payload = booking });
+                return Ok(new ResponseObj { Status = 200, Msg = "Update Successful", Payload = booking });
                 //return Ok(product);
             }
             catch
@@ -100,7 +100,7 @@ namespace MovieBookingMicroservice.Controllers
                 {
                     _log4net.Info("PostBooking Method Called");
                     Booking bookingWithId = await _repository.CreateBooking(booking);
-                    return CreatedAtAction("PostBooking", new ResponseObj { status = 200, msg = "Booking Added", payload = bookingWithId });
+                    return CreatedAtAction("PostBooking", new ResponseObj { Status = 200, Msg = "Booking Added", Payload = bookingWithId });
                     //return CreatedAtAction("PostProduct", productWithId);
                 }
                 else
@@ -130,7 +130,7 @@ namespace MovieBookingMicroservice.Controllers
                     return NotFound();
                 }
 
-                return Ok(new ResponseObj { status = 200, msg = "Deleted Successfully", payload = booking });
+                return Ok(new ResponseObj { Status = 200, Msg = "Deleted Successfully", Payload = booking });
                 //return Ok(product);
             }
             catch

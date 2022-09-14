@@ -50,8 +50,8 @@ namespace MovieBookingMicroservice.Tests
             Assert.IsInstanceOf<OkObjectResult>(response.Result);
             var result = response.Result as OkObjectResult;
             ResponseObj converted = result.Value as ResponseObj;
-            Assert.IsNotNull(converted.payload);
-            var returedValues = converted.payload as IEnumerable<Booking>;
+            Assert.IsNotNull(converted.Payload);
+            var returedValues = converted.Payload as IEnumerable<Booking>;
             Assert.That(returedValues.Count(), Is.EqualTo(bookings.Count));
             Assert.That(bookings, Is.EqualTo(returedValues));
         }
@@ -74,8 +74,8 @@ namespace MovieBookingMicroservice.Tests
             Assert.IsInstanceOf<OkObjectResult>(response.Result);
             var result = response.Result as OkObjectResult;
             ResponseObj converted = result.Value as ResponseObj;
-            Assert.IsNotNull(converted.payload);
-            var returedValue = converted.payload as Booking;
+            Assert.IsNotNull(converted.Payload);
+            var returedValue = converted.Payload as Booking;
             Assert.That(p, Is.EqualTo(returedValue));
 
         }
@@ -108,8 +108,8 @@ namespace MovieBookingMicroservice.Tests
             Assert.IsInstanceOf<OkObjectResult>(response.Result);
             var result = response.Result as OkObjectResult;
             ResponseObj converted = result.Value as ResponseObj;
-            Assert.IsNotNull(converted.payload);
-            var returedValue = converted.payload as Booking;
+            Assert.IsNotNull(converted.Payload);
+            var returedValue = converted.Payload as Booking;
             Assert.That(returedValue, Is.EqualTo(booking));
         }
 
@@ -143,8 +143,8 @@ namespace MovieBookingMicroservice.Tests
             Assert.IsInstanceOf<CreatedAtActionResult>(response.Result);
             var result = response.Result as CreatedAtActionResult;
             ResponseObj converted = result.Value as ResponseObj;
-            Assert.IsNotNull(converted.payload);
-            var returedValue = converted.payload as Booking;
+            Assert.IsNotNull(converted.Payload);
+            var returedValue = converted.Payload as Booking;
             Assert.That(returedValue, Is.EqualTo(bookingFinal));
         }
         [Test]
@@ -176,7 +176,7 @@ namespace MovieBookingMicroservice.Tests
             Assert.IsInstanceOf<OkObjectResult>(response.Result);
             var result = response.Result as OkObjectResult;
             var responseObj = result.Value as ResponseObj;
-            var returedBooking = responseObj.payload as Booking;
+            var returedBooking = responseObj.Payload as Booking;
             Assert.That(booking.Id, Is.EqualTo(returedBooking.Id));
             Assert.That(returedBooking, Is.EqualTo(booking));
         }
